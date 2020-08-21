@@ -52,7 +52,7 @@ class ExampleAnimatedTransitioning: NSObject,UIViewControllerAnimatedTransitioni
         animatingView?.frame = initialFrame
         //根据协议中的方法获取动画的时间。
         let duration = transitionDuration(using: transitionContext)
-        UIView.animate(withDuration: duration, delay:0, usingSpringWithDamping:300.0, initialSpringVelocity:5.0, options:UIViewAnimationOptions.allowUserInteraction, animations:{
+        UIView.animate(withDuration: duration, delay:0, usingSpringWithDamping:300.0, initialSpringVelocity:5.0, options:UIView.AnimationOptions.allowUserInteraction, animations:{
             
             //we move the view to the final position.
             animatingView?.frame = finalFrame

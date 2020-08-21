@@ -54,10 +54,10 @@ class ExampleViewController: UIViewController {
         containerView.addSubview(infoLabel)
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setTitle("Close", for: UIControlState())
+        closeButton.setTitle("Close", for: UIControl.State())
         closeButton.tintColor = UIColor.white
         closeButton.titleLabel!.font = UIFont.systemFont(ofSize: bodyFontSize)
-        closeButton.addTarget(self, action: #selector(ExampleViewController.close(_:)), for: UIControlEvents.touchUpInside)
+        closeButton.addTarget(self, action: #selector(ExampleViewController.close(_:)), for: UIControl.Event.touchUpInside)
         containerView.addSubview(closeButton)
         
         
@@ -70,35 +70,35 @@ class ExampleViewController: UIViewController {
         view.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|[containerView]|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views))
         
         view.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|[containerView]|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views))
         
         containerView.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|[titleLabel]|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views))
         
         containerView.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|[infoLabel]|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views))
         
         containerView.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|[closeButton]|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views))
         
@@ -106,13 +106,13 @@ class ExampleViewController: UIViewController {
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|-(>=30)-[titleLabel]-" +
                 "[infoLabel]-[closeButton]-(>=10)-|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views))
         
     }
     
-    func close(_ sender: UIButton) {
+    @objc func close(_ sender: UIButton) {
         presentingViewController!.dismiss(animated: true, completion: nil)
     }
     

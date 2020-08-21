@@ -53,7 +53,7 @@ extension PopoverViewController:UIPopoverPresentationControllerDelegate
         return navigationController
     }
 
-    func dismiss() {
+    @objc func dismiss() {
         dismiss(animated: true, completion: nil)
     }
 }
